@@ -143,6 +143,7 @@ chmod +x cmds/init.sh
 
 echo 'Building main image..'
 docker build -t "${DOCKER_REG}/${SERVICE_NAME}:${ANDROID_VER}_${TARGET_PROD}" \
+    --build-arg DOCKER_REG="${DOCKER_REGISTRY}" \
     --build-arg ANDROID_VERSION="${ANDROID_VER}" \
     --build-arg TARGET_PRODUCT="${TARGET_PROD}" \
     --build-arg TARGET_BUILD_VARIANT="${TARGET_BUILD_VAR}" \

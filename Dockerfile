@@ -1,4 +1,7 @@
-FROM docreg.local:5000/androidx86_builder:base as ab_base
+ARG DOCKER_REGISTRY=docreg.local:5000
+ENV DOCKER_REGISTRY $DOCKER_REGISTRY
+
+FROM DOCKER_REGISTRY/androidx86_builder:base as ab_base
 
 ARG ANDROID_VERSION=q
 ENV ANDROID_VERSION $ANDROID_VERSION
