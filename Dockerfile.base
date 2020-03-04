@@ -1,0 +1,21 @@
+FROM ubuntu:18.04
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        bc bison build-essential curl ccache dosfstools flex genisoimage gettext git \
+        git-core gnupg gperf kmod m4 openjdk-8-jdk lib32stdc++6 libelf-dev libssl-dev \
+        libxml2-utils maven ninja-build python-enum34 python-mako repo syslinux-utils wget \
+        unzip vim zip zlib1g-dev gcc-multilib g++-multilib imagemagick libc6-dev \
+        lib32ncurses5-dev x11proto-core-dev lib32z-dev libgl1-mesa-dev libncurses5 \
+        libssl-dev libx11-dev libxml2-utils lunzip squashfs-tools syslinux xorriso \
+        xsltproc zlib1g-dev
+
+# Configure git
+RUN \
+    git config --global user.email none@nowhere && \
+    git config --global user.name None
+
+WORKDIR /root
+
+COPY \
+    ./.gitconfig ~/.gitconfig 
