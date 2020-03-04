@@ -9,9 +9,11 @@
 
 set -e
 
-# These values will need to be updated to work with your local setup
+# These two values will need to be updated to work with your local setup
+#####
 SOURCE_BUILD_DIR='/mnt/source-code/androidx86'
 DOCKER_REG='docreg.local:5000'
+#####
 
 ANDROID_VER='pie'
 TARGET_PROD='android_x86_64'
